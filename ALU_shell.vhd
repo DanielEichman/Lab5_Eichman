@@ -58,51 +58,39 @@ begin
 --  5     : IN
 --  6     : ADD
 --  7     : LD
---	aluswitch: process (Accumulator, Data, OpSel)
---	begin
---		temp		<= Accumulator AND Data 							when (OpSel = "000") else 
---						std_logic_vector(unsigned(not Data) + 1)  when (OpSel = "001") else
---						not Data												when (OpSel = "010") else
---						std_logic_vector(unsigned(Data) ror 1)		when (OpSel = "011") else
---						Accumulator OR Data								when (OpSel = "100") else
---						Data													when (OpSel = "101") else
---						Accumulator + Data 								when (OpSel = "110") else
---						Data													when (OpSel = "111") else
---						Accumulator;					
---	end process;
-	Result		<= Accumulator AND Data 							when (OpSel = "000") else 
-						std_logic_vector(unsigned(not Accumulator) + 1)  when (OpSel = "001") else
-						not Accumulator												when (OpSel = "010") else
-						std_logic_vector(unsigned(Accumulator) ror 1)		when (OpSel = "011") else
-						Accumulator OR Data								when (OpSel = "100") else
-						Data													when (OpSel = "101") else
-						Accumulator + Data 								when (OpSel = "110") else
-						Data													when (OpSel = "111") else
-						Accumulator;	
--- OR, enter your conditional signal statement here
 
+aluswitch: process (Accumulator, Data, OpSel)
+       begin
+                                -- enter your if/then/else or case statements here
+                                
+                                case opsel is
+                                
+                                when "000" => result<= (Accumulator and Data);
+                                when "001" => result<= std_logic_vector(not unsigned(Accumulator)+"0001");
+                                when "010" => result<= (not Accumulator);
+                                when "011" =>Result(0) <= Accumulator(1);
+                                                                                Result(1) <= Accumulator(2);
+                                                                                Result(2) <= Accumulator(3);
+                                                                                Result(3) <= Accumulator(0);
+                                when "100" => result<= (Accumulator or Data);
+                                when "101" => result<= Data;
+                                when "110" => result<= std_logic_vector(unsigned(Accumulator) + unsigned(Data));
+                                when "111" => result<= Data;
+                                when others => result<= "0000"; 
+                                
+                                end case;
+           end process;
+--aluswitch: process (Accumulator, Data, OpSel)
+--        begin
+--end process;
+--Result <= 	(Data and Accumulator) 													when OpSel = "000" else
+--				std_logic_vector(not unsigned(Accumulator)+"0001")				when OpSel = "001" else
+--				 Not Accumulator 															when OpSel = "010" else
+--				 std_logic_vector(rotate_right(unsigned(Accumulator), 1)) 	when OpSel = "011" else
+--				 Data or Accumulator 													when OpSel = "100" else
+--				 Data 																		when OpSel = "101" else
+--				 std_logic_vector(unsigned(Accumulator) + unsigned(Data)) 	when OpSel = "110" else
+--				 Data 																		when OpSel = "111" else
+--				 Accumulator;
 end ALU;
 
---		if(OpSel = "00")then--AND
---			temp <= Accumulator AND Data;
---			--Accumulator <= temp;
---		elsif(OpSel = "001")then--NEG
---			temp <= std_logic_vector(unsigned(not Data) + 1);
---		elsif(OpSel = "010")then--NOT
---			temp <= not Data;
---		elsif(OpSel = "011")then--ROR
---			--(Data ror 1)
---			--temp <= Data;
---			temp<= std_logic_vector(unsigned(Data) ror 1);
---		elsif(OpSel = "100")then--OR
---			temp <= Accumulator OR Data;
---		elsif(OpSel = "101")then--IN
---			temp<=Data;
---		elsif(OpSel = "110")then--ADD
---			temp <= Accumulator + Data;
---		elsif(OpSel = "111")then--LD
---			temp <= Data;
---		else
---			temp<=Accumulator;
---		end if; 
---		Accumulator <= temp;
