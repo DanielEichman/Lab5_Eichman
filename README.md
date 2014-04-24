@@ -1,4 +1,4 @@
-Lab5_Eichman_working
+Lab5_Eichman
 ====================
 ##Discussion of 1st Program Operation
 This program loads 8 into the accumulator then increments it. The value is then outputted onto port 3. If the value is less than 0 it will be incremented again then outputted. If it is greater than 0 the program will enter an infinite loop. The output values are: 9,A,B,C,D,E,F,1 then the program will enter a invite loop.  
@@ -25,7 +25,7 @@ IF the value is less than 0, jump to ADDI.
 Enters a infinite loop.
 
 ##Flow Chart
-![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman/master/Flow.JPG)
+![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman/master/Flow.jpg)
 ##Answers to PRISM Questions
 ####1.	When the controller’s current state is “FETCH,” what is the status of the following control lines:
 
