@@ -18,6 +18,8 @@ IF the value is less than 0, jump to ADDI.
 ####JMP
 ![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman_working/master/JMP.JPG)
 Enters a infinite loop.
+##Flow Chart
+![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman_working/master/Flow.JPG)
 ##Answers to PRISM Questions
 ####1.	When the controller’s current state is “FETCH,” what is the status of the following control lines:
 
