@@ -139,7 +139,7 @@ LED <= CLOCKBUS_SIG(26 DOWNTO 19);
 --		  Example: if you are not using 7-seg display #3 set nibble3 to "0000"
 --------------------------------------------------------------------------------------
 Inst_PRISM : PRISM PORT MAP(
-        Clock => Clockbus_Sig(23),
+        Clock => Clockbus_Sig(19),
         Reset_L => not btn(3),
         --Control_Bus => ,
         Input_0 => switch(3 downto 0),

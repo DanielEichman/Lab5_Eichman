@@ -41,7 +41,7 @@ architecture Memory of Memory is
 	 	-- Component declaration of the "rom_176x4(rom_176x4_arch)" unit defined in
 	-- file: "./src/ROM_176x4.vhd"
 	component rom_176x4
-	port(Clock : in std_logic;
+	port(--Clock : in std_logic;
 		CS_L : in std_logic;
 		R_W : in std_logic;
 		Addr : in std_logic_vector(7 downto 0);
@@ -75,7 +75,7 @@ begin
 	
 	
 	Program_ROM : rom_176x4
-	port map(Clock => Clock,
+	port map(--Clock => Clock,
 		CS_L => ROM_SEL,
 		R_W => R_W,
 		Addr => Addr,
