@@ -4,22 +4,28 @@ Lab5_Eichman_working
 This program loads 8 into the accumulator then increments it. The value is then outputted onto port 3. If the value is less than 0 it will be incremented again then outputted. If it is greater than 0 the program will enter an infinite loop. The output values are: 9,A,B,C,D,E,F,1 then the program will enter a invite loop.  
 ##Discussion of 1st Program Instruction Cycles	
 ####LDAI
-![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman_working/master/LDAI.JPG)
+![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman/master/LDAI.JPG)
+
 This loads the value 8 on to the accumulator.
 ####ADDI
-![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman_working/master/ADDI.JPG)
+![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman/master/ADDI.JPG)
+
 This adds the value 1 to the accumulator.
 ####OUT
-![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman_working/master/OUT.JPG)
+![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman/master/OUT.JPG)
+
 This outputs the value of the accumulator to port 3.
 ####JN
-![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman_working/master/JN.JPG)
+![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman/master/JN.JPG)
+
 IF the value is less than 0, jump to ADDI.
 ####JMP
-![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman_working/master/JMP.JPG)
+![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman/master/JMP.JPG)
+
 Enters a infinite loop.
+
 ##Flow Chart
-![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman_working/master/Flow.JPG)
+![image](https://raw.githubusercontent.com/DanielEichman/Lab5_Eichman/master/Flow.JPG)
 ##Answers to PRISM Questions
 ####1.	When the controller’s current state is “FETCH,” what is the status of the following control lines:
 
